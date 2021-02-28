@@ -5,11 +5,6 @@
 //import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 //import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 //
-///**
-// * @Description
-// * @Author shaoyonggong
-// * @Date 2021/2/24
-// */
 //@Configuration
 //@EnableWebSecurity
 //public class SecurityConfig extends WebSecurityConfigurerAdapter {

@@ -9,12 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>
  *  前端控制器
  * </p>
- *
- * @author shaoyonggong
- * @since 2021-02-24
  */
 @RestController
-@RequestMapping("/user-account")
+@RequestMapping("/userAccount")
 public class UserAccountController {
 
 }

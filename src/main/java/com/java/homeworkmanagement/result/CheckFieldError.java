@@ -6,9 +6,9 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 
 /**
- * @Description
- * @Author shaoyonggong
- * @Date 2020/6/14
+ * @Description 检查字段属性错误
+ * @Author
+ * @Date
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

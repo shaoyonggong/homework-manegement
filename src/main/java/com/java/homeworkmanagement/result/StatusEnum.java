@@ -2,8 +2,8 @@ package com.java.homeworkmanagement.result;
 
 /**
  * @Description 状态常量
- * @Author shaoyonggong
- * @Date 2020/6/14
+ * @Author
+ * @Date
  */
 public enum StatusEnum {
 

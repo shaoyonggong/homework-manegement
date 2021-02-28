@@ -3,6 +3,8 @@ package com.java.homeworkmanagement.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.java.homeworkmanagement.dto.StudentInfoDTO;
+import com.java.homeworkmanagement.utils.CoverTo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -16,16 +18,13 @@ import java.time.LocalDateTime;
  * <p>
  *
  * </p>
- *
- * @author shaoyonggong
- * @since 2021-02-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value = "StudentInfo对象", description = "")
 @TableName("student_info")
-public class StudentInfoPO implements Serializable {
+public class StudentInfoPO implements Serializable, CoverTo<StudentInfoDTO> {
 
     private static final long serialVersionUID = 1L;
 
@@ -54,4 +53,15 @@ public class StudentInfoPO implements Serializable {
     @ApiModelProperty(value = "注册时间")
     private LocalDateTime registerTime;
 
+    @Override
+    public StudentInfoDTO coverTo() {
+        return new StudentInfoDTO().setId(this.getId())
+                .setAccount(this.getAccount())
+                .setStudentName(this.getStudentName())
+                .setAge(this.getAge())
+                .setGender(this.getGender())
+                .setStudentClass(this.getStudentClass())
+                .setGrade(this.getGrade())
+                .setRegisterTime(this.getRegisterTime());
+    }
 }

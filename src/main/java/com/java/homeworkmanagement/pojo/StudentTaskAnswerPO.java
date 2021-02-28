@@ -1,6 +1,10 @@
 package com.java.homeworkmanagement.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.java.homeworkmanagement.dto.StudentTaskAnswerDTO;
+import com.java.homeworkmanagement.utils.CoverTo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,20 +18,18 @@ import java.time.LocalDateTime;
  * <p>
  *
  * </p>
- *
- * @author shaoyonggong
- * @since 2021-02-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value = "StudentTaskAnswer对象", description = "")
 @TableName("student_task_answer")
-public class StudentTaskAnswerPO implements Serializable {
+public class StudentTaskAnswerPO implements Serializable, CoverTo<StudentTaskAnswerDTO> {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "作业表id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty(value = "课程")
@@ -54,6 +56,12 @@ public class StudentTaskAnswerPO implements Serializable {
     @ApiModelProperty(value = "学生多选作业答案")
     private String multipleChoiceAnswer;
 
+    @ApiModelProperty(value = "判断题作业")
+    private String judgmentTask;
+
+    @ApiModelProperty(value = "判断题答案")
+    private String judgmentAnswer;
+
     @ApiModelProperty(value = "填空作业")
     private String blanksTask;
 
@@ -69,4 +77,24 @@ public class StudentTaskAnswerPO implements Serializable {
     @ApiModelProperty(value = "提交时间")
     private LocalDateTime submitTime;
 
+    @Override
+    public StudentTaskAnswerDTO coverTo() {
+        return new StudentTaskAnswerDTO()
+                .setId(this.id)
+                .setSubject(this.subject)
+                .setTaskId(this.taskId)
+                .setStudentId(this.studentId)
+                .setTaskTitle(this.taskTitle)
+                .setSingleChoiceTask(this.singleChoiceTask)
+                .setSingleChoiceAnswer(this.singleChoiceAnswer)
+                .setMultipleChoiceTask(this.multipleChoiceTask)
+                .setMultipleChoiceAnswer(this.multipleChoiceAnswer)
+                .setJudgmentTask(this.judgmentTask)
+                .setJudgmentAnswer(this.judgmentAnswer)
+                .setBlanksTask(this.blanksTask)
+                .setBlanksTaskAnswer(this.blanksTaskAnswer)
+                .setTaskContent(this.taskContent)
+                .setScore(this.score)
+                .setSubmitTime(this.submitTime);
+    }
 }

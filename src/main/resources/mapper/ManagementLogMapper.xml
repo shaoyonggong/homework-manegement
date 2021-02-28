@@ -3,11 +3,12 @@
 <mapper namespace="com.java.homeworkmanagement.dao.ManagementLogMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.java.homeworkmanagement.pojo.ManagementLogPO">
-        <id column="id" property="id" />
-        <result column="account" property="account" />
-        <result column="status" property="status" />
-        <result column="log_describe" property="logDescribe" />
+    <resultMap id="BaseResultMap" type="com.java.homeworkmanagement.pojo.OperationLogPO">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="operation_type" property="operationType"/>
+        <result column="operation_result" property="operationResult"/>
+        <result column="operation_describe" property="operationDescribe"/>
     </resultMap>
 
 </mapper>

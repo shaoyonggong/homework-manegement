@@ -9,8 +9,8 @@ import java.util.List;
 
 /**
  * @Description 统一返回对象
- * @Author shaoyonggong
- * @Dae 2020/6/14
+ * @Author
+ * @Dae
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -66,7 +66,7 @@ public class RestResult<D> implements Serializable {
     /**
      * 总数
      */
-    private int totalCount;
+    private long totalCount;
 
     /**
      * 原始参数
