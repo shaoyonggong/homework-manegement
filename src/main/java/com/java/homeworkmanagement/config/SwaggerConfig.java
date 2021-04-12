@@ -1,4 +1,4 @@
-package com.java.homeworkmanagement.config;
+package com.java.currencywms.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,11 +21,11 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.java.homeworkmanagement"))
                 .paths(PathSelectors.any())
                 .build().apiInfo(new ApiInfoBuilder()
-                        .title("王子颖毕设Api接口文档")
+                        .title("Api接口文档")
                         .description("接口详细信息......")
-                        .version("9.0")
-                        .contact(new Contact("王子颖毕设", "com.java.wzy", "wangziying@126.com"))
-                        .license("The Ziying Wang License")
+                        .version("1.0")
+                        .contact(new Contact("currency-wms", "com.java.currencywms", "shaoyonggong@126.com"))
+                        .license("The  License")
                         .licenseUrl("http://www.nishishi.com")
                         .build());
     }
