@@ -24,7 +24,7 @@ public class SwaggerConfig {
                         .title("Api接口文档")
                         .description("接口详细信息......")
                         .version("1.0")
-                        .contact(new Contact("currency-wms", "com.java.currencywms", "shaoyonggong@126.com"))
+                        .contact(new Contact("homeworkmanagements", "com.java.homeworkmanagement", "shaoyonggong@126.com"))
                         .license("The  License")
                         .licenseUrl("http://www.nishishi.com")
                         .build());
